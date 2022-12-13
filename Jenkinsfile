@@ -89,7 +89,7 @@ pipeline {
         }
          stage("Deploy Image to DockerHub") {
                 steps{
-                    sh 'docker push jawher123456/project'
+                    sh 'docker push onsa/project'
                 }
         }
 
