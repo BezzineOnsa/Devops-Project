@@ -74,11 +74,11 @@ pipeline {
             }
         }
         
-       stage("Publish to Nexus Repository Manager") {
+     /*  stage("Publish to Nexus Repository Manager") {
             steps {
                 sh  "mvn deploy:deploy-file -DgroupId=tn.esprit -DartifactId=ExamThourayaS2 -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.33.10:8081/repository/maven-releases/ -Dfile=target/ExamThourayaS2-0.0.1-SNAPSHOT.jar -DskipTests" 
             }
-        }
+        }*/
 
 
         stage("Login to DockerHub") {
@@ -87,11 +87,11 @@ pipeline {
                     sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u onsa -p 13633447Onsa'
                 }
         }
-     /*    stage("Deploy Image to DockerHub") {
+         stage("Deploy Image to DockerHub") {
                 steps{
                     sh 'docker push jawher123456/project'
                 }
-        }*/
+        }
 
         
         stage('Start container') {
